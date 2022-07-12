@@ -23,7 +23,7 @@ class _BoardingPageState extends State<BoardingPage> {
           var cubit = WomenCoCubitVendors.GET(context);
           return Directionality(
             textDirection:
-                cubit.checkLang() ? TextDirection.ltr : TextDirection.rtl,
+                cubit.checkLang()! ? TextDirection.ltr : TextDirection.rtl,
             child: Scaffold(
               appBar: AppBar(),
               body: Container(
@@ -37,7 +37,7 @@ class _BoardingPageState extends State<BoardingPage> {
                           height: 642.h,
                         )),
                     Text(
-                      cubit.checkLang()
+                      cubit.checkLang()!
                           ? "Welcome to \nWomenCo Vendors"
                           : "اهلا بك في تطبيق العاملين",
                       style:
@@ -52,13 +52,13 @@ class _BoardingPageState extends State<BoardingPage> {
                           ),
                           WomenCoButton(context,
                               title:
-                                  cubit.checkLang() ? "Apply Now" : "سجل الان",
+                                  cubit.checkLang()! ? "Apply Now" : "سجل الان",
                               textColor: Colors.white, onPressed: () {
                             PushRoute(context, ApplyNow1());
                           }, color: Colors.pink[200]),
                           WomenCoButton(context,
                               title:
-                                  cubit.checkLang() ? "Signin" : "تسجيل دخول",
+                                  cubit.checkLang()! ? "Signin" : "تسجيل دخول",
                               textColor: Colors.grey, onPressed: () {
                             PushRoute(context, SignIn());
                           }, color: Colors.grey[200])

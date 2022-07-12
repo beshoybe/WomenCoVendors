@@ -40,12 +40,12 @@ class _ServicesScreenState extends State<ServicesScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        WomenCoCubitVendors.lang ? "Services" : "خدمات",
+                        WomenCoCubitVendors.lang! ? "Services" : "خدمات",
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        WomenCoCubitVendors.lang
+                        WomenCoCubitVendors.lang!
                             ? "Select services that you can provide ."
                             : "إختر الخدمات التي يمكنك توفيرها",
                         style: TextStyle(fontSize: 18, color: Colors.grey),
@@ -76,7 +76,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                             controller: GroupButtonController(selectedIndex: 0),
                             isRadio:
                                 true, //If we want one option only to be selected
-                            buttons: WomenCoCubitVendors.lang
+                            buttons: WomenCoCubitVendors.lang!
                                 ? ["Cleaning", "Nursing", "Cooking"]
                                 : ["تنظيف", "تمريض", "طبخ"],
                             onSelected: (val, i, selected) {
@@ -88,7 +88,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                         height: 41.h,
                       ),
                       Text(
-                        WomenCoCubitVendors.lang ? "Type" : "النوع",
+                        WomenCoCubitVendors.lang! ? "Type" : "النوع",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -118,7 +118,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                             controller: GroupButtonController(selectedIndex: 0),
                             isRadio:
                                 true, //If we want one option only to be selected
-                            buttons: WomenCoCubitVendors.lang
+                            buttons: WomenCoCubitVendors.lang!
                                 ? ["Home", "Apartment", "Villa"]
                                 : ["بيت", "شقة", "فيلا"],
                             onSelected: (val, i, selected) {
@@ -130,7 +130,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                         height: 41.h,
                       ),
                       Text(
-                        WomenCoCubitVendors.lang ? "Zone" : "المنطقة",
+                        WomenCoCubitVendors.lang! ? "Zone" : "المنطقة",
                         style: TextStyle(
                             fontSize: 20, fontWeight: FontWeight.bold),
                       ),
@@ -141,18 +141,18 @@ class _ServicesScreenState extends State<ServicesScreen> {
                           value: value,
                           items: [
                             DropdownMenuItem(
-                              child: Text(WomenCoCubitVendors.lang
+                              child: Text(WomenCoCubitVendors.lang!
                                   ? "Sheikh Zayed"
                                   : "الشيخ زايد"),
-                              value: WomenCoCubitVendors.lang
+                              value: WomenCoCubitVendors.lang!
                                   ? "Sheikh Zayed"
                                   : "الشيخ زايد",
                             ),
                             DropdownMenuItem(
-                              child: Text(WomenCoCubitVendors.lang
+                              child: Text(WomenCoCubitVendors.lang!
                                   ? "6th of October"
                                   : "السادس من أكتوبر"),
-                              value: WomenCoCubitVendors.lang
+                              value: WomenCoCubitVendors.lang!
                                   ? "6th of October"
                                   : "السادس من أكتوبر",
                             )
@@ -163,7 +163,7 @@ class _ServicesScreenState extends State<ServicesScreen> {
                     ],
                   ),
                   WomenCoButton(context,
-                      title: WomenCoCubitVendors.lang ? "Continue" : "تابع",
+                      title: WomenCoCubitVendors.lang! ? "Continue" : "تابع",
                       onPressed: () {
                     cubit.addService();
                     Navigator.pop(context);
@@ -177,4 +177,4 @@ class _ServicesScreenState extends State<ServicesScreen> {
   }
 }
 
-String? value = WomenCoCubitVendors.lang ? "Governate" : "المحافظة";
+String? value = WomenCoCubitVendors.lang! ? "Governate" : "المحافظة";

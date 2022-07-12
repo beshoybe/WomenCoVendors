@@ -21,7 +21,7 @@ class WomenCoCubitVendors extends Cubit<WomenCoStatesVendors> {
   static WomenCoCubitVendors GET(context) => BlocProvider.of(context);
 
 //-----------------------------Variables-----------------------------//
-  static bool lang = CacheHelper.getData(key: "lang") == null ? false : true;
+  static bool? lang = CacheHelper.getData(key: "lang");
 //---------------------currentUser--------------------------------//
   Worker currentUser = Worker(
       totalBalance: 2150.2,
@@ -46,6 +46,8 @@ class WomenCoCubitVendors extends Cubit<WomenCoStatesVendors> {
   var phoneNumber = TextEditingController();
   File? profileImage;
   File? criminalChip;
+  File? frontId, backId;
+  File? fullID;
 
   String? selectedService;
   String? selectedServiceType;
@@ -102,7 +104,7 @@ class WomenCoCubitVendors extends Cubit<WomenCoStatesVendors> {
     return months[monthNum - 1];
   }
 
-  bool checkLang() {
+  bool? checkLang() {
     return lang;
   }
 

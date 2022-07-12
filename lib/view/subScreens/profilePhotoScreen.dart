@@ -70,7 +70,7 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
                                       },
                                       icon: Icon(Icons.photo)),
                                   Text(
-                                    WomenCoCubitVendors.lang
+                                    WomenCoCubitVendors.lang!
                                         ? "Choose from\ngallery"
                                         : "اختر من الاستوديو",
                                     textAlign: TextAlign.center,
@@ -100,18 +100,18 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                            WomenCoCubitVendors.lang
+                            WomenCoCubitVendors.lang!
                                 ? "Take your profile photo\n"
                                 : "إلتقط الصوره الآن",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20)),
                         Text(
-                            WomenCoCubitVendors.lang
+                            WomenCoCubitVendors.lang!
                                 ? "Your profile photo helps people recognize you. Please note that once you submit your profile photo it cannot be changed.\n\n"
                                 : "تساعد صورة ملفك الشخصي الأشخاص في التعرف عليك. يرجى ملاحظة أنه بمجرد إرسال صورة ملفك الشخصي لا يمكن تغييرها.",
                             style: TextStyle(fontSize: 18)),
                         Text(
-                            WomenCoCubitVendors.lang
+                            WomenCoCubitVendors.lang!
                                 ? """
 1 Face the camera directly with your eyes and mouth clearly visible.
 2 Make sure the photo is well lit, free of glare and in focus.
@@ -130,7 +130,7 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
                           width: 120,
                         ),
                   WomenCoButton(context,
-                      title: WomenCoCubitVendors.lang
+                      title: WomenCoCubitVendors.lang!
                           ? "Take Photo"
                           : "إلتقط الصوره", onPressed: () {
                     setState(() {

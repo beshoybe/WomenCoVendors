@@ -19,13 +19,13 @@ class ApplyNow1 extends StatelessWidget {
         builder: (context, states) {
           var cubit = AuthCubit.GET(context);
           return Directionality(
-            textDirection: WomenCoCubitVendors.lang
+            textDirection: WomenCoCubitVendors.lang!
                 ? TextDirection.ltr
                 : TextDirection.rtl,
             child: Scaffold(
                 floatingActionButton: FloatingActionButton(
                   backgroundColor: Colors.pink[200],
-                  child: WomenCoCubitVendors.lang
+                  child: WomenCoCubitVendors.lang!
                       ? Icon(Icons.arrow_forward_ios_outlined)
                       : Icon(Icons.arrow_back_ios_new_outlined),
                   onPressed: () {
@@ -48,7 +48,7 @@ class ApplyNow1 extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                WomenCoCubitVendors.lang
+                                WomenCoCubitVendors.lang!
                                     ? "Application"
                                     : "حساب جديد",
                                 style: TextStyle(
@@ -63,27 +63,27 @@ class ApplyNow1 extends StatelessWidget {
                                     WomenCoTextField(
                                         controller: cubit.SignupEnglishName,
                                         prefix: Icons.person,
-                                        title: WomenCoCubitVendors.lang
+                                        title: WomenCoCubitVendors.lang!
                                             ? "English Name"
                                             : "الاسم بالانجليزية"),
                                     WomenCoTextField(
                                         controller: cubit.SignupArabicName,
                                         prefix: Icons.person,
-                                        title: WomenCoCubitVendors.lang
+                                        title: WomenCoCubitVendors.lang!
                                             ? "Arabic Name"
                                             : "الاسم بالعربية"),
                                     WomenCoTextField(
                                         controller: cubit.SignupEmail,
                                         prefix: Icons.email_outlined,
                                         type: TextInputType.emailAddress,
-                                        title: WomenCoCubitVendors.lang
+                                        title: WomenCoCubitVendors.lang!
                                             ? "Email (Otional)"
                                             : "البريد الالكتروني (اختياري)"),
                                     WomenCoTextField(
                                         controller: cubit.SignupPhone,
                                         prefix: Icons.call,
                                         type: TextInputType.phone,
-                                        title: WomenCoCubitVendors.lang
+                                        title: WomenCoCubitVendors.lang!
                                             ? "Phone Number"
                                             : "رقم الهاتف")
                                   ],

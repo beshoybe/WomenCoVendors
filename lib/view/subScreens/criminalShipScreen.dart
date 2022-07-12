@@ -53,7 +53,7 @@ class _CriminalShipScreenState extends State<CriminalShipScreen> {
                                       icon: Icon(
                                         Icons.camera_alt,
                                       )),
-                                  Text(WomenCoCubitVendors.lang
+                                  Text(WomenCoCubitVendors.lang!
                                       ? "Take a photo"
                                       : "إلتقط الصوره ")
                                 ],
@@ -67,7 +67,7 @@ class _CriminalShipScreenState extends State<CriminalShipScreen> {
                                       },
                                       icon: Icon(Icons.photo)),
                                   Text(
-                                    WomenCoCubitVendors.lang
+                                    WomenCoCubitVendors.lang!
                                         ? "Choose from\ngallery"
                                         : "إختر من الأستوديو",
                                     textAlign: TextAlign.center,
@@ -88,14 +88,14 @@ class _CriminalShipScreenState extends State<CriminalShipScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        WomenCoCubitVendors.lang
+                        WomenCoCubitVendors.lang!
                             ? "Criminal Ship"
                             : "الصحيفه الإجراميه",
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        WomenCoCubitVendors.lang
+                        WomenCoCubitVendors.lang!
                             ? "Make sure all information is readable, not blurry and that all corners of the document are visible"
                             : "تأكد من أن جميع المعلومات قابلة للقراءة وليست ضبابية وأن جميع أركان المستند مرئية",
                         style: TextStyle(fontSize: 16, color: Colors.grey),
@@ -112,7 +112,7 @@ class _CriminalShipScreenState extends State<CriminalShipScreen> {
                     ],
                   ),
                   WomenCoButton(context,
-                      title: WomenCoCubitVendors.lang
+                      title: WomenCoCubitVendors.lang!
                           ? "Take Photo"
                           : "إلتقط الصوره", onPressed: () {
                     setState(() {

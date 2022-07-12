@@ -29,14 +29,16 @@ class _RequiredStepsState extends State<RequiredSteps> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  WomenCoCubitVendors.lang ? "Required Steps\n" : "خطوات تسجيل",
+                  WomenCoCubitVendors.lang!
+                      ? "Required Steps\n"
+                      : "خطوات تسجيل",
                   style: TextStyle(
                       color: Colors.blue[400],
                       fontSize: 23,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  WomenCoCubitVendors.lang
+                  WomenCoCubitVendors.lang!
                       ? "Here’s what you need to do to set up your account.\n"
                       : ".إليك ما عليك القيام به لإعداد حسابك",
                   style: TextStyle(color: Colors.grey, fontSize: 18),
@@ -44,19 +46,19 @@ class _RequiredStepsState extends State<RequiredSteps> {
               ],
             ),
             {
-              WomenCoCubitVendors.lang ? "Personal Picture" : "الصوره الشخصية":
+              WomenCoCubitVendors.lang! ? "Personal Picture" : "الصوره الشخصية":
                   WomenCoCubitVendors.GET(context).isPictureFinished
             },
             {
-              WomenCoCubitVendors.lang ? "National ID" : "البطاقة الشخصية":
+              WomenCoCubitVendors.lang! ? "National ID" : "البطاقة الشخصية":
                   WomenCoCubitVendors.GET(context).isIDFinished
             },
             {
-              WomenCoCubitVendors.lang ? "Criminal Chip" : "الصحيفه الإجراميه":
+              WomenCoCubitVendors.lang! ? "Criminal Chip" : "الصحيفه الإجراميه":
                   WomenCoCubitVendors.GET(context).isCriminalFinished
             },
             {
-              WomenCoCubitVendors.lang ? "Services" : "خدمات":
+              WomenCoCubitVendors.lang! ? "Services" : "خدمات":
                   WomenCoCubitVendors.GET(context).isServicesFinished
             }
           ];
