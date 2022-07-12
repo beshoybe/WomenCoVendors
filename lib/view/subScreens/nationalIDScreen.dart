@@ -39,12 +39,16 @@ class _NationalIDScreenState extends State<NationalIDScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "National ID",
+                        WomenCoCubitVendors.lang
+                            ? "National ID"
+                            : "الهويه الوطنيه",
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        "Make sure you entered your real nationaal ID",
+                        WomenCoCubitVendors.lang
+                            ? "Make sure you entered your real nationaal ID"
+                            : "تأكد من إدخال هويتك الوطنية الحقيقية",
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       ),
                       SizedBox(
@@ -53,11 +57,15 @@ class _NationalIDScreenState extends State<NationalIDScreen> {
                       TextField(
                         controller: WomenCoCubitVendors.GET(context).nationalID,
                         decoration: InputDecoration(
-                            labelText: "National ID (14 Number)"),
+                            labelText: WomenCoCubitVendors.lang
+                                ? "National ID (14 Number)"
+                                : "الهويه الوطنيه (14 رقم)"),
                       ),
                     ],
                   ),
-                  WomenCoButton(context, title: "Continue", onPressed: () {
+                  WomenCoButton(context,
+                      title: WomenCoCubitVendors.lang ? "Continue" : "تابع",
+                      onPressed: () {
                     cubit.addNationalID();
                     Navigator.pop(context);
                   }, color: Colors.blue[300])

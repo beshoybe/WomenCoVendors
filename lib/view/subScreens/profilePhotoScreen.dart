@@ -38,8 +38,15 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
                                 children: [
                                   IconButton(
                                       onPressed: () async {
-                                        await ImagePicker().pickImage(
-                                            source: ImageSource.camera);
+                                        await ImagePicker()
+                                            .pickImage(
+                                                source: ImageSource.camera)
+                                            .then((value) {
+                                          setState(() {
+                                            cubit.profileImage =
+                                                File(value!.path);
+                                          });
+                                        });
                                       },
                                       icon: Icon(
                                         Icons.camera_alt,
@@ -51,12 +58,21 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
                                 children: [
                                   IconButton(
                                       onPressed: () async {
-                                        await ImagePicker().pickImage(
-                                            source: ImageSource.gallery);
+                                        await ImagePicker()
+                                            .pickImage(
+                                                source: ImageSource.gallery)
+                                            .then((value) {
+                                          setState(() {
+                                            cubit.profileImage =
+                                                File(value!.path);
+                                          });
+                                        });
                                       },
                                       icon: Icon(Icons.photo)),
                                   Text(
-                                    "Choose from\ngallery",
+                                    WomenCoCubitVendors.lang
+                                        ? "Choose from\ngallery"
+                                        : "اختر من الاستوديو",
                                     textAlign: TextAlign.center,
                                   )
                                 ],
@@ -83,19 +99,40 @@ class _ProfilePhotoState extends State<ProfilePhoto> {
                   Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Take your profile photo\n",
+                        Text(
+                            WomenCoCubitVendors.lang
+                                ? "Take your profile photo\n"
+                                : "إلتقط الصوره الآن",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 20)),
                         Text(
-                            "Your profile photo helps people recognize you. Please note that once you submit your profile photo it cannot be changed.\n\n",
+                            WomenCoCubitVendors.lang
+                                ? "Your profile photo helps people recognize you. Please note that once you submit your profile photo it cannot be changed.\n\n"
+                                : "تساعد صورة ملفك الشخصي الأشخاص في التعرف عليك. يرجى ملاحظة أنه بمجرد إرسال صورة ملفك الشخصي لا يمكن تغييرها.",
                             style: TextStyle(fontSize: 18)),
-                        Text("""
+                        Text(
+                            WomenCoCubitVendors.lang
+                                ? """
 1 Face the camera directly with your eyes and mouth clearly visible.
 2 Make sure the photo is well lit, free of glare and in focus.
-3 No photos of a photo, filters, or alterations.""",
+3 No photos of a photo, filters, or alterations."""
+                                : """
+1 وجه الكاميرا مباشرة مع رؤية عينيك وفمك بوضوح.
+2 تأكد من أن الصورة مضاءة جيدًا وخالية من الوهج ومركزة.
+3 لا توجد صور للصورة أو المرشحات أو التعديلات.
+""",
                             style: TextStyle(color: Colors.grey, fontSize: 16)),
                       ]),
-                  WomenCoButton(context, title: "Take Photo", onPressed: () {
+                  cubit.profileImage == null
+                      ? Container()
+                      : Container(
+                          child: Image.file(cubit.profileImage as File),
+                          width: 120,
+                        ),
+                  WomenCoButton(context,
+                      title: WomenCoCubitVendors.lang
+                          ? "Take Photo"
+                          : "إلتقط الصوره", onPressed: () {
                     setState(() {
                       isBottomSheetOpened = !isBottomSheetOpened;
                       // cubit.addProfileImage();

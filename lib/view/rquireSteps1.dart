@@ -29,33 +29,38 @@ class _RequiredStepsState extends State<RequiredSteps> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Required Steps\n",
+                  WomenCoCubitVendors.lang ? "Required Steps\n" : "خطوات تسجيل",
                   style: TextStyle(
                       color: Colors.blue[400],
-                      fontSize: 20,
+                      fontSize: 23,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  "Here’s what you need to do to set up your account.\n",
-                  style: TextStyle(color: Colors.grey, fontSize: 16),
+                  WomenCoCubitVendors.lang
+                      ? "Here’s what you need to do to set up your account.\n"
+                      : ".إليك ما عليك القيام به لإعداد حسابك",
+                  style: TextStyle(color: Colors.grey, fontSize: 18),
                 ),
               ],
             ),
-            {"Phone Number": WomenCoCubitVendors.GET(context).isPhoneFinished},
             {
-              "Personal Picture":
+              WomenCoCubitVendors.lang ? "Personal Picture" : "الصوره الشخصية":
                   WomenCoCubitVendors.GET(context).isPictureFinished
             },
-            {"National ID": WomenCoCubitVendors.GET(context).isIDFinished},
             {
-              "Criminal Chip":
+              WomenCoCubitVendors.lang ? "National ID" : "البطاقة الشخصية":
+                  WomenCoCubitVendors.GET(context).isIDFinished
+            },
+            {
+              WomenCoCubitVendors.lang ? "Criminal Chip" : "الصحيفه الإجراميه":
                   WomenCoCubitVendors.GET(context).isCriminalFinished
             },
-            {"Services": WomenCoCubitVendors.GET(context).isServicesFinished}
+            {
+              WomenCoCubitVendors.lang ? "Services" : "خدمات":
+                  WomenCoCubitVendors.GET(context).isServicesFinished
+            }
           ];
           List<dynamic> onPressedFunctions = [
-            () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => MobileNumberScreen())),
             () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => ProfilePhoto())),
             () => Navigator.push(context,

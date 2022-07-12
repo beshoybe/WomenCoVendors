@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:womenco_vendors/model/orderClass.dart';
 import 'package:womenco_vendors/model/userClass.dart';
@@ -20,7 +21,7 @@ class WomenCoCubitVendors extends Cubit<WomenCoStatesVendors> {
   static WomenCoCubitVendors GET(context) => BlocProvider.of(context);
 
 //-----------------------------Variables-----------------------------//
-  static bool? lang = CacheHelper.getData(key: "lang");
+  static bool lang = CacheHelper.getData(key: "lang") == null ? false : true;
 //---------------------currentUser--------------------------------//
   Worker currentUser = Worker(
       totalBalance: 2150.2,
@@ -102,7 +103,7 @@ class WomenCoCubitVendors extends Cubit<WomenCoStatesVendors> {
   }
 
   bool checkLang() {
-    return lang!;
+    return lang;
   }
 
   void setCurrentOrder(BuildContext context, Order theOrder) {

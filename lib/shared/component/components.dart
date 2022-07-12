@@ -21,7 +21,7 @@ Widget WomenCoTextField(
       validator: (value) {
         if (prefix != Icons.email_outlined) {
           if (value!.isEmpty || value == " ") {
-            return WomenCoCubitVendors.lang!
+            return WomenCoCubitVendors.lang
                 ? "Please enter $title"
                 : "من فضلك ادخل $title";
           }
@@ -90,12 +90,16 @@ Widget RequiredTiles(String title, bool isFinished, void Function() onPressed,
                         )),
                     isFinished
                         ? Text(
-                            "Next Step",
+                            WomenCoCubitVendors.lang
+                                ? "Next Step"
+                                : "الخطوة التاليه",
                             style: TextStyle(
                                 color: Colors.blue[400], fontSize: 15),
                           )
                         : Text(
-                            "Get Started",
+                            WomenCoCubitVendors.lang
+                                ? "Get Started"
+                                : "ابدأ الآن",
                             style: TextStyle(
                                 color: Colors.grey[600], fontSize: 15),
                           )

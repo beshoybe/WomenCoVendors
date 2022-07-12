@@ -26,8 +26,6 @@ Future<void> main() async {
                     elevation: 0,
                     iconTheme: IconThemeData(color: Colors.black),
                     backgroundColor: Colors.transparent)),
-            home: WomenCoCubitVendors.lang == null
-                ? Language()
-                : BoardingPage())));
+            home: !WomenCoCubitVendors.lang ? Language() : BoardingPage())));
   });
 }

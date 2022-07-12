@@ -17,10 +17,21 @@ class ApplyNow_2 extends StatelessWidget {
         builder: (context, states) {
           var cubit = AuthCubit.GET(context);
           return Directionality(
-            textDirection: WomenCoCubitVendors.lang!
+            textDirection: WomenCoCubitVendors.lang
                 ? TextDirection.ltr
                 : TextDirection.rtl,
             child: Scaffold(
+                floatingActionButton: FloatingActionButton(
+                  backgroundColor: Colors.pink[200],
+                  child: WomenCoCubitVendors.lang
+                      ? Icon(Icons.arrow_forward_ios_outlined)
+                      : Icon(Icons.arrow_back_ios_new_outlined),
+                  onPressed: () {
+                    if (cubit.formKey.currentState!.validate()) {
+                      PushRoute(context, RequiredSteps());
+                    }
+                  },
+                ),
                 appBar: AppBar(),
                 body: Padding(
                   padding: const EdgeInsets.all(30.0),
@@ -33,7 +44,7 @@ class ApplyNow_2 extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              WomenCoCubitVendors.lang!
+                              WomenCoCubitVendors.lang
                                   ? "Password"
                                   : "كلمة السر",
                               style: TextStyle(
@@ -56,7 +67,7 @@ class ApplyNow_2 extends StatelessWidget {
                                           icon: Icon(cubit.isPass
                                               ? Icons.visibility_off
                                               : Icons.visibility)),
-                                      title: WomenCoCubitVendors.lang!
+                                      title: WomenCoCubitVendors.lang
                                           ? "Password"
                                           : "كلمة السر"),
                                   WomenCoTextField(
@@ -70,7 +81,7 @@ class ApplyNow_2 extends StatelessWidget {
                                           icon: Icon(cubit.isPassConfirm
                                               ? Icons.visibility_off
                                               : Icons.visibility)),
-                                      title: WomenCoCubitVendors.lang!
+                                      title: WomenCoCubitVendors.lang
                                           ? "Confirm Password"
                                           : "تأكيد كلمة السر"),
                                 ],
@@ -78,19 +89,6 @@ class ApplyNow_2 extends StatelessWidget {
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 232.h,
-                        ),
-                        Container(
-                          width: 60.w,
-                          child: WomenCoButton(context,
-                              title: WomenCoCubitVendors.lang! ? "<" : ">",
-                              onPressed: () {
-                            if (cubit.formKey.currentState!.validate()) {
-                              PushRoute(context, RequiredSteps());
-                            }
-                          }, color: Colors.pink[200]),
-                        )
                       ],
                     ),
                   ),

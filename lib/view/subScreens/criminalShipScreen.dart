@@ -53,7 +53,9 @@ class _CriminalShipScreenState extends State<CriminalShipScreen> {
                                       icon: Icon(
                                         Icons.camera_alt,
                                       )),
-                                  Text("Take a photo")
+                                  Text(WomenCoCubitVendors.lang
+                                      ? "Take a photo"
+                                      : "إلتقط الصوره ")
                                 ],
                               ),
                               Column(
@@ -65,7 +67,9 @@ class _CriminalShipScreenState extends State<CriminalShipScreen> {
                                       },
                                       icon: Icon(Icons.photo)),
                                   Text(
-                                    "Choose from\ngallery",
+                                    WomenCoCubitVendors.lang
+                                        ? "Choose from\ngallery"
+                                        : "إختر من الأستوديو",
                                     textAlign: TextAlign.center,
                                   )
                                 ],
@@ -84,12 +88,16 @@ class _CriminalShipScreenState extends State<CriminalShipScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Criminal Ship",
+                        WomenCoCubitVendors.lang
+                            ? "Criminal Ship"
+                            : "الصحيفه الإجراميه",
                         style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        "Make sure all information is readable, not blurry and that all corners of the document are visible",
+                        WomenCoCubitVendors.lang
+                            ? "Make sure all information is readable, not blurry and that all corners of the document are visible"
+                            : "تأكد من أن جميع المعلومات قابلة للقراءة وليست ضبابية وأن جميع أركان المستند مرئية",
                         style: TextStyle(fontSize: 16, color: Colors.grey),
                       ),
                       SizedBox(
@@ -103,7 +111,10 @@ class _CriminalShipScreenState extends State<CriminalShipScreen> {
                       ))
                     ],
                   ),
-                  WomenCoButton(context, title: "Take Photo", onPressed: () {
+                  WomenCoButton(context,
+                      title: WomenCoCubitVendors.lang
+                          ? "Take Photo"
+                          : "إلتقط الصوره", onPressed: () {
                     setState(() {
                       isCriminalBottomSheetOpened =
                           !isCriminalBottomSheetOpened;
